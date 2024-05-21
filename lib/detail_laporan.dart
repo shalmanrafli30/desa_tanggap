@@ -115,6 +115,65 @@ class DetailLaporan extends StatelessWidget {
               ),
             ),
             // END STATUS LAPORAN
+            // DESKRIPSI MASALAH SECTION
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 15, vertical: 10),
+              child: Container(
+                width: double.infinity,
+                padding: const EdgeInsets.all(10),
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(10),
+                  border: Border.all(
+                    color: const Color.fromRGBO(167, 167, 167, 1),
+                    width: 1, // Border width
+                  ),
+                ),
+                child: const Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text(
+                      'Deskripsi Masalah',
+                      style: TextStyle(
+                        fontWeight: FontWeight.w500,
+                        fontSize: 15,
+                      ),
+                    ),
+                    SizedBox(height: 4), // Space between title and content
+                    Text(
+                      'Sampah menumpuk di area taman bermain.',
+                      style: TextStyle(fontSize: 14),
+                    ),
+                    SizedBox(height: 25), // Space between sections
+                    Text(
+                      'Kategori Masalah',
+                      style: TextStyle(
+                        fontWeight: FontWeight.w500,
+                        fontSize: 15,
+                      ),
+                    ),
+                    SizedBox(height: 4), // Space between title and content
+                    Text(
+                      'Kebersihan',
+                      style: TextStyle(fontSize: 14),
+                    ),
+                    SizedBox(height: 25), // Space between sections
+                    Text(
+                      'Lokasi Masalah',
+                      style: TextStyle(
+                        fontWeight: FontWeight.w500,
+                        fontSize: 15,
+                      ),
+                    ),
+                    SizedBox(height: 4), // Space between title and content
+                    Text(
+                      'Taman Bermain RT 05 RW 03',
+                      style: TextStyle(fontSize: 14),
+                    ),
+                  ],
+                ),
+              ),
+            ),
+            // END DESKRIPSI MASALAH SECTION
           ],
         ),
       ),
