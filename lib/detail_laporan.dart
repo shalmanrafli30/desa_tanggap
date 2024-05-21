@@ -10,7 +10,8 @@ class DetailLaporan extends StatelessWidget {
       appBar: AppBar(
         title: const Text(
           'Detail Laporan',
-          style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold),
+          style: TextStyle(
+              color: Colors.white, fontWeight: FontWeight.bold, fontSize: 18),
         ),
         backgroundColor: const Color(0xFFD90429),
         iconTheme: const IconThemeData(
