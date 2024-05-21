@@ -6,27 +6,38 @@ class DetailLaporan extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        appBar: AppBar(
-          title: const Text('Detail Laporan'),
+      extendBodyBehindAppBar: true,
+      appBar: AppBar(
+        title: const Text(
+          'Detail Laporan',
+          style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold),
         ),
-        body: SingleChildScrollView(
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Stack(
-                children: [
-                  ClipRRect(
-                    child: Image.asset(
-                      "assets/sampah.jpeg",
-                      width: double.infinity,
-                      height: 170, // Adjust the height as needed
-                      fit: BoxFit.cover,
-                    ),
+        backgroundColor: const Color.fromARGB(100, 0, 0, 0),
+        elevation: 0,
+        iconTheme: const IconThemeData(
+          color: Colors.white, // Warna baru untuk ikon back button
+        ),
+      ),
+      body: SingleChildScrollView(
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Stack(
+              children: [
+                ClipRRect(
+                  child: Image.asset(
+                    "assets/sampah.jpeg",
+                    width: double.maxFinite,
+                    height: 250, // Adjust the height as needed
+                    fit: BoxFit.cover,
                   ),
-                ],
-              )
-            ],
-          ),
-        ));
+                ),
+              ],
+            ),
+            // Konten lainnya
+          ],
+        ),
+      ),
+    );
   }
 }
