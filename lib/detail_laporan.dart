@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:timeline_tile/timeline_tile.dart';
 
 class DetailLaporan extends StatelessWidget {
   const DetailLaporan({super.key});
@@ -6,14 +7,12 @@ class DetailLaporan extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      extendBodyBehindAppBar: true,
       appBar: AppBar(
         title: const Text(
           'Detail Laporan',
           style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold),
         ),
-        backgroundColor: const Color.fromARGB(100, 0, 0, 0),
-        elevation: 0,
+        backgroundColor: const Color(0xFFD90429),
         iconTheme: const IconThemeData(
           color: Colors.white, // Warna baru untuk ikon back button
         ),
@@ -41,8 +40,11 @@ class DetailLaporan extends StatelessWidget {
                 width: double.infinity,
                 height: 100,
                 decoration: BoxDecoration(
-                  color: const Color.fromRGBO(237, 242, 244, 1),
                   borderRadius: BorderRadius.circular(10),
+                  border: Border.all(
+                    color: const Color.fromRGBO(167, 167, 167, 1),
+                    width: 1, // Border width
+                  ),
                 ),
                 child: Padding(
                   padding: const EdgeInsets.all(10),
@@ -174,6 +176,89 @@ class DetailLaporan extends StatelessWidget {
               ),
             ),
             // END DESKRIPSI MASALAH SECTION
+            // PROGRESS LAPORAN SECTION
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 15, vertical: 10),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Container(
+                    width: double.infinity,
+                    padding: const EdgeInsets.all(10),
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(10),
+                      border: Border.all(
+                        color: const Color.fromRGBO(167, 167, 167, 1),
+                        width: 1, // Border width
+                      ),
+                    ),
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        const Padding(
+                          padding: EdgeInsets.only(left: 10),
+                          child: Text(
+                            'Progres Laporan',
+                            style: TextStyle(
+                              fontWeight: FontWeight.bold,
+                              fontSize: 16,
+                            ),
+                          ),
+                        ),
+                        const SizedBox(height: 15),
+                        Padding(
+                          padding: const EdgeInsets.symmetric(
+                              horizontal: 15, vertical: 10),
+                          child: TimelineTile(
+                            axis: TimelineAxis.vertical,
+                            alignment: TimelineAlign.manual,
+                            lineXY: 0,
+                            isFirst: true,
+                            indicatorStyle: const IndicatorStyle(
+                              width: 15,
+                              color: Color.fromRGBO(167, 167, 167, 1),
+                            ),
+                            beforeLineStyle: const LineStyle(
+                              color: Color.fromRGBO(167, 167, 167, 1),
+                              thickness: 1,
+                            ),
+                            endChild: const Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                Text(
+                                  'Menunggu',
+                                  style: TextStyle(
+                                    fontWeight: FontWeight.bold,
+                                    fontSize: 14,
+                                  ),
+                                ),
+                                SizedBox(height: 8),
+                                Text(
+                                  'Laporan diterima oleh bagian Fasilitas Umum',
+                                  style: TextStyle(
+                                    fontSize: 12,
+                                    color: Colors.grey,
+                                  ),
+                                ),
+                                SizedBox(height: 8),
+                                Text(
+                                  '22:04 WIB',
+                                  style: TextStyle(
+                                    fontSize: 10,
+                                    color: Colors.grey,
+                                  ),
+                                ),
+                              ],
+                            ),
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                ],
+              ),
+            )
+            // END PROGRESS LAPORAN SECTION
           ],
         ),
       ),
