@@ -664,7 +664,7 @@ class _LaporanMasyarakatState extends State<LaporanMasyarakat> {
         backgroundColor: const Color(0xFFD90429),
         shape: const CircleBorder(),
         child: const Icon(
-          Icons.report_problem,
+          Icons.camera_alt,
           color: Colors.white,
         ),
       ),
